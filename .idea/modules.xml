@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/kong-demo.iml" filepath="$PROJECT_DIR$/.idea/kong-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../demo/.idea/kong-demo.iml" filepath="$PROJECT_DIR$/../demo/.idea/kong-demo.iml" />
     </modules>
   </component>
 </project>
