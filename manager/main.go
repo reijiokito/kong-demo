@@ -8,7 +8,7 @@ import (
 
 func main() {
 
-	socketFile := "/home/cong/Documents/bnm/demo/go-pluginserver/go_pluginserver.sock"
+	socketFile := "/home/cong/Documents/bnm/kong-demo/go-pluginserver/go_pluginserver.sock"
 
 	conn, err := rpc.Dial("unix", socketFile)
 	if err != nil {
