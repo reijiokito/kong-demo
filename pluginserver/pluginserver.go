@@ -41,10 +41,6 @@ func newServer() *PluginServer {
 		s.pluginsDir = *pluginsDir
 	}
 
-	if err, _ := plugin.Open("asdasd"); err != nil {
-		return nil
-	}
-
 	return &s
 }
 

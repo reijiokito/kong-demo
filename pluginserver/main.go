@@ -100,12 +100,12 @@ func runServer(listener net.Listener) {
 		if err != nil {
 			return
 		}
-
-		enc := codec.NewEncoder(conn, &handle)
-		_ = enc.Encode([]interface{}{2, "serverPid Hello there", os.Getpid()})
-
-		rpcCodec := codec.MsgpackSpecRpc.ServerCodec(conn, &handle)
-		go rpc.ServeCodec(rpcCodec)
+		//
+		//enc := codec.NewEncoder(conn, &handle)
+		//_ = enc.Encode([]interface{}{2, "serverPid Hello there", os.Getpid()})
+		//
+		//rpcCodec := codec.MsgpackSpecRpc.ServerCodec(conn, &handle)
+		go rpc.ServeConn(conn)
 	}
 }
 
@@ -122,7 +122,7 @@ func startServer() {
 		return
 	}
 
-	rpc.RegisterName("plugin", newServer())
+	rpc.RegisterName("Plugin", newServer())
 	runServer(listener)
 }
 

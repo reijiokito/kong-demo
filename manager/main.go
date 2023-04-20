@@ -8,7 +8,7 @@ import (
 
 func main() {
 
-	socketFile := "/home/cong/Documents/bnm/kong-demo/go-pluginserver/go_pluginserver.sock"
+	socketFile := "/home/cong/Documents/bnm/kong-demo/pluginserver/go_pluginserver.sock"
 
 	conn, err := rpc.Dial("unix", socketFile)
 	if err != nil {
@@ -29,8 +29,7 @@ func main() {
 	_ = enc.Encode("/path/dir")
 
 	var reply error
-	var val string
-	err = conn.Call("plugin.SetPluginDir", []interface{}{"/path", &val}, reply)
+	err = conn.Call("plugin.SetPluginDir", "/path/dir", &reply)
 	if err != nil {
 		log.Fatal("Failed to call SetPluginDir:", err)
 	}
